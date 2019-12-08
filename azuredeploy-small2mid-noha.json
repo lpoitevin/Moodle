@@ -23,6 +23,13 @@
             },
             "type": "string"
         },
+        "vNetAddressSpace": {
+            "defaultValue": "172.31.0.0",
+            "metadata": {
+                "description": "Address range for the Moodle virtual network and various subnets - presumed /16 for a newly created vnet in case customVnetId is blank. Further subneting (a number of */24 subnets starting from the xxx.yyy.zzz.0/24 will be created on a newly created vnet or your BYO-vnet (specified in customVnetId parameter)."
+            },
+            "type": "string"
+        },
         "moodleVersion": {
             "allowedValues": [
                 "MOODLE_38_STABLE",
