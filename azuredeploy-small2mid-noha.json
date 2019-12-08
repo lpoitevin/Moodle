@@ -16,6 +16,13 @@
             },
             "defaultValue": ""
         },
+        "customVnetId": {
+            "defaultValue": "",
+            "metadata": {
+                "description": "Azure Resource ID of the Azure virtual network where you want to deploy your Moodle resources. A vnet resource ID is of the following format: /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx/resourceGroups/gggg/providers/Microsoft.Network/virtualNetworks/vvvv. Note that this virtual network must be on the same Azure location as this template deployment location. If this parameter is blank, a new Azure virtual network will be created and used. In that case, the address space of the newly created virtual network will be */16 of the following vNetAddressSpace parameter value below."
+            },
+            "type": "string"
+        },
         "moodleVersion": {
             "allowedValues": [
                 "MOODLE_38_STABLE",
@@ -57,6 +64,7 @@
                     "_artifactsLocation":           { "value": "[parameters('_artifactsLocation')]" },
                     "_artifactsLocationSasToken":   { "value": "[parameters('_artifactsLocationSasToken')]" },
                     "redisDeploySwitch":            { "value": false },
+                    "customVnetId":                 { "value": "[parameters('customVnetId')]" },
                     "moodleVersion":                { "value": "[parameters('moodleVersion')]" },
                     "sshPublicKey":                 { "value": "[parameters('sshPublicKey')]" },
                     "mysqlPgresVcores":             { "value": 8 },
