@@ -1194,7 +1194,7 @@
             "subnetTika": "[concat('tika-subnet-',variables('resourceprefix'))]",
             "subnetTikaPrefix": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),1)))]",
             "subnetTikaRange": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),1)), '.0/24')]",
-            "subnetWeb": "[concat('web-subnet-',variables('resourceprefix'))]",
+            "subnetWeb": "[concat('web-subnet','')]",
             "subnetWebPrefix": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),0)))]",
             "subnetWebRange": "[variables('subnetWebRange')]",
             "thumbprintSslCert": "[if(or(empty(parameters('keyVaultResourceId')), empty(parameters('sslCertThumbprint'))), 'None', parameters('sslCertThumbprint'))]",
