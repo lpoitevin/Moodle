@@ -607,6 +607,13 @@
             },
             "type": "string"
         },
+        "subnetRangeWeb": {
+            "defaultValue": "172.31.0.0/24",
+            "metadata": {
+                "description": "Subnet Address Space and Range"
+            },
+            "type": "string"
+        },
         "gatewayType": {
             "allowedValues": [
                 "Vpn",
@@ -1241,6 +1248,6 @@
         "octets": "[split(parameters('vNetAddressSpace'), '.')]",
         "resourceprefix": "[substring(uniqueString(resourceGroup().id, deployment().name), 3, 6)]",
         "subnetSanPrefix": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),2)))]",
-        "subnetWebRange": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),0)), '.0/24')]"
+        "subnetWebRange": "[parameters('subnetRangeWeb')]"
     }
 }
