@@ -600,6 +600,13 @@
             },
             "type": "string"
         },
+        "subnetWebName": {
+            "defaultValue": "web-subnet",
+            "metadata": {
+                "description": "web-subnet name"
+            },
+            "type": "string"
+        },
         "gatewayType": {
             "allowedValues": [
                 "Vpn",
@@ -1194,7 +1201,7 @@
             "subnetTika": "[concat('tika-subnet-',variables('resourceprefix'))]",
             "subnetTikaPrefix": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),1)))]",
             "subnetTikaRange": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),1)), '.0/24')]",
-            "subnetWeb": "[concat('web-subnet','')]",
+            "subnetWeb": "[parameters('subnetWebName')]",
             "subnetWebPrefix": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),0)))]",
             "subnetWebRange": "[variables('subnetWebRange')]",
             "thumbprintSslCert": "[if(or(empty(parameters('keyVaultResourceId')), empty(parameters('sslCertThumbprint'))), 'None', parameters('sslCertThumbprint'))]",
