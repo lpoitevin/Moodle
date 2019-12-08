@@ -37,6 +37,13 @@
             },
             "type": "string"
         },
+        "subnetRangeWeb": {
+            "defaultValue": "172.31.0.0/24",
+            "metadata": {
+                "description": "Subnet Address Space and Range"
+            },
+            "type": "string"
+        },
         "moodleVersion": {
             "allowedValues": [
                 "MOODLE_38_STABLE",
@@ -81,6 +88,7 @@
                     "customVnetId":                 { "value": "[parameters('customVnetId')]" },
                     "vNetAddressSpace":             { "value": "[parameters('vNetAddressSpace')]" },
                     "subnetWebName":                { "value": "[parameters('subnetWebName')]" },
+                    "subnetRangeWeb":               { "value": "[parameters('subnetRangeWeb')]" },
                     "moodleVersion":                { "value": "[parameters('moodleVersion')]" },
                     "sshPublicKey":                 { "value": "[parameters('sshPublicKey')]" },
                     "mysqlPgresVcores":             { "value": 8 },
