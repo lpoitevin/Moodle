@@ -30,6 +30,13 @@
             },
             "type": "string"
         },
+        "subnetWebName": {
+            "defaultValue": "web-subnet",
+            "metadata": {
+                "description": "web-subnet name"
+            },
+            "type": "string"
+        },
         "moodleVersion": {
             "allowedValues": [
                 "MOODLE_38_STABLE",
@@ -73,6 +80,7 @@
                     "redisDeploySwitch":            { "value": false },
                     "customVnetId":                 { "value": "[parameters('customVnetId')]" },
                     "vNetAddressSpace":             { "value": "[parameters('vNetAddressSpace')]" },
+                    "subnetWebName":                { "value": "[parameters('subnetWebName')]" },
                     "moodleVersion":                { "value": "[parameters('moodleVersion')]" },
                     "sshPublicKey":                 { "value": "[parameters('sshPublicKey')]" },
                     "mysqlPgresVcores":             { "value": 8 },
