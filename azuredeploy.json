@@ -7,7 +7,7 @@
             "metadata": {
                 "description": "The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
             },
-            "defaultValue": "https://raw.githubusercontent.com/icebrian/Moodle/master/"
+            "defaultValue": "https://raw.githubusercontent.com/lpoitevin/Moodle/master/"
         },
         "_artifactsLocationSasToken": {
             "type": "securestring",
@@ -1092,10 +1092,10 @@
             "commonFunctionsScriptUri": "[concat(parameters('_artifactsLocation'),'scripts/helper_functions.sh',parameters('_artifactsLocationSasToken'))]",
             "controllerVmSku": "[parameters('controllerVmSku')]",
             "customVnetId": "[parameters('customVnetId')]",
-            "ctlrNicName": "[concat('controller-vm-nic-',variables('resourceprefix'))]",
-            "ctlrNsgName": "[concat('controller-nsg-',variables('resourceprefix'))]",
-            "ctlrPipName": "[concat('controller-pubip-',variables('resourceprefix'))]",
-            "ctlrVmName": "[concat('controller-vm-',variables('resourceprefix'))]",
+            "ctlrNicName": "c0110prodmdctlr01nic01",
+            "ctlrNsgName": "c0110prodmdctlr01nsg01",
+            "ctlrPipName": "c0110prodmdctlr01pip",
+            "ctlrVmName": "c0110prodmdctlr01",
             "ctlrVmSecrets": "[take(variables('ctlrVmSecretsArray'), if(empty(parameters('keyVaultResourceId')), 0, 1))]",
             "dbLogin": "[parameters('dbLogin')]",
             "dbLoginPassword": "[concat(substring(uniqueString(resourceGroup().id, deployment().name), 2, 11), '*7', toUpper('pfiwb'))]",
@@ -1142,8 +1142,8 @@
             "installObjectFsSwitch": "[parameters('installObjectFsSwitch')]",
             "lbDns": "[concat('lb-',variables('resourceprefix'),'.',parameters('location'),'.cloudapp.azure.com')]",
             "lbSku": "[parameters('loadBalancerSku')]",
-            "lbName": "[concat('lb-',variables('resourceprefix'))]",
-            "lbPipName": "[concat('lb-pubip-',variables('resourceprefix'))]",
+            "lbName": "c0110prodmdlb01",
+            "lbPipName": "c0110prodmdlb01pip",
             "location": "[parameters('location')]",
             "moodleAdminPass": "[concat(toUpper('xl'), substring(uniqueString(resourceGroup().id, deployment().name), 6, 7),',1*8')]",
             "moodleDbName": "moodle",
@@ -1221,8 +1221,8 @@
             "tikaVmSku": "[parameters('tikaVmSku')]",
             "vNetAddressSpace": "[parameters('vNetAddressSpace')]",
             "vaultName": "[concat('vault-',variables('resourceprefix'))]",
-            "vmssName": "[concat('vmss-',variables('resourceprefix'))]",
-            "vmssdStorageAccounttName": "[concat('vmss',uniqueString(resourceGroup().id))]",
+            "vmssName": "c0110prodmdvss01",
+            "vmssdStorageAccounttName": "c0110prodmdvss01sa",
             "vnetGwDeploySwitch": "[parameters('vnetGwDeploySwitch')]",
             "vnetName": "[concat('vnet-',variables('resourceprefix'))]",
             "vpnType": "[parameters('vpnType')]",
