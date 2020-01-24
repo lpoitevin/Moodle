@@ -55,6 +55,8 @@ check_fileServerType_param $fileServerType
   sudo apt-get -y install python-software-properties unzip rsyslog
 
   sudo apt-get -y install postgresql-client mysql-client git
+  
+  sudo apt-get -y install ghostscript
 
   if [ $fileServerType = "gluster" ]; then
     #configure gluster repository & install gluster client
@@ -81,7 +83,7 @@ check_fileServerType_param $fileServerType
   fi
 
   # Moodle requirements
-  sudo apt-get install -y graphviz aspell php-soap php-json php-redis php-bcmath php-gd php-pgsql php-mysql php-xmlrpc php-intl php-xml php-bz2
+  sudo apt-get install -y graphviz aspell php-soap php-json php-redis php-bcmath php-gd php-pgsql php-mysql php-xmlrpc php-intl php-xml php-bz2 php7.0-ldap
   if [ "$dbServerType" = "mssql" ]; then
     install_php_mssql_driver
   fi
@@ -650,5 +652,6 @@ EOF
   # Restart Varnish
   systemctl daemon-reload
   service varnish restart
-
+  wget https://netpa.fe.unl.pt/assets/reports/assinatura_carimbo.png
+  
 }  > /tmp/setup.log
