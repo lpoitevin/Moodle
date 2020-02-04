@@ -1094,7 +1094,7 @@
             "customVnetId": "[parameters('customVnetId')]",
             "ctlrNicName": "c0110prodmdctlr01nic01",
             "ctlrNsgName": "c0110prodmdctlr01nsg01",
-            "ctlrPipName": "c0110prodmdctlr01pip_b",
+            "ctlrPipName": "c0110prodmdctlr01pipb",
             "ctlrVmName": "c0110prodmdctlr01",
             "ctlrVmSecrets": "[take(variables('ctlrVmSecretsArray'), if(empty(parameters('keyVaultResourceId')), 0, 1))]",
             "dbLogin": "[parameters('dbLogin')]",
