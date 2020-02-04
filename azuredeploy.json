@@ -1222,7 +1222,7 @@
             "vNetAddressSpace": "[parameters('vNetAddressSpace')]",
             "vaultName": "[concat('vault-',variables('resourceprefix'))]",
             "vmssName": "c0110prodmdvss01",
-            "vmssdStorageAccounttName": "c0110prodmdvss01sa",
+            "vmssdStorageAccounttName": "c0110prodmdvss01sab",
             "vnetGwDeploySwitch": "[parameters('vnetGwDeploySwitch')]",
             "vnetName": "[concat('vnet-',variables('resourceprefix'))]",
             "vpnType": "[parameters('vpnType')]",
