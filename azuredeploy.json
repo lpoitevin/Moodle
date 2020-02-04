@@ -1143,7 +1143,7 @@
             "lbDns": "[concat('lb-',variables('resourceprefix'),'.',parameters('location'),'.cloudapp.azure.com')]",
             "lbSku": "[parameters('loadBalancerSku')]",
             "lbName": "c0110prodmdlb01",
-            "lbPipName": "c0110prodmdlb01pip",
+            "lbPipName": "c0110prodmdlb01pipb",
             "location": "[parameters('location')]",
             "moodleAdminPass": "[concat(toUpper('xl'), substring(uniqueString(resourceGroup().id, deployment().name), 6, 7),',1*8')]",
             "moodleDbName": "moodle",
